@@ -1,29 +1,30 @@
-FunctionApp1/README.md
-# FunctionApp1 - Gerador de Código de Barras de Boletos
+ï»¿# ğŸ¦ FunctionApp1 - Gerador de CÃ³digo de Barras de Boletos
 
-Este projeto é uma Azure Function desenvolvida em .NET 8 para geração de códigos de barras de boletos bancários. Ele recebe dados via requisição HTTP, gera o código de barras no padrão bancário, cria uma imagem do código e envia os dados para uma fila do Azure Service Bus.
+> ![#0078D4](https://via.placeholder.com/15/0078D4/000000?text=+) **Azure Function em .NET 8**
 
-## Funcionalidades
+Este projeto Ã© uma Azure Function desenvolvida em .NET 8 para geraÃ§Ã£o de cÃ³digos de barras de boletos bancÃ¡rios. Ele recebe dados via requisiÃ§Ã£o HTTP, gera o cÃ³digo de barras no padrÃ£o bancÃ¡rio, cria uma imagem do cÃ³digo e envia os dados para uma fila do Azure Service Bus.
 
-- Geração de código de barras de boleto (44 dígitos)
-- Criação de imagem do código de barras (formato PNG, base64)
-- Envio dos dados para uma fila do Azure Service Bus
+## âœ¨ Funcionalidades
 
-## Como usar
+- ğŸ·ï¸ GeraÃ§Ã£o de cÃ³digo de barras de boleto (44 dÃ­gitos)
+- ğŸ–¼ï¸ CriaÃ§Ã£o de imagem do cÃ³digo de barras (PNG, base64)
+- â˜ï¸ Envio dos dados para uma fila do Azure Service Bus
 
-1. Faça uma requisição HTTP POST para o endpoint da função `barcode-generate` com o seguinte corpo JSON:
+## ğŸš€ Como usar
 
-2. O retorno será um JSON contendo:
-- `barcode`: código de barras gerado
-- `valorOriginal`: valor informado
-- `dataVencimento`: data de vencimento
-- `imageBase64`: imagem do código de barras em base64
+1. FaÃ§a uma requisiÃ§Ã£o HTTP POST para o endpoint da funÃ§Ã£o `barcode-generate` com o seguinte corpo JSON: { "valor": "100.00", "dataVencimento": "2025-06-15" }
 
-## Configuração
+2. O retorno serÃ¡ um JSON contendo:
+   - `barcode`: cÃ³digo de barras gerado
+   - `valorOriginal`: valor informado
+   - `dataVencimento`: data de vencimento
+   - `imageBase64`: imagem do cÃ³digo de barras em base64
 
-- Defina a variável de ambiente `ServiceBusConnectionString` com a string de conexão do Azure Service Bus.
+## âš™ï¸ ConfiguraÃ§Ã£o
 
-## Requisitos
+- Defina a variÃ¡vel de ambiente `ServiceBusConnectionString` com a string de conexÃ£o do Azure Service Bus.
+
+## ğŸ“¦ Requisitos
 
 - .NET 8
 - Azure Functions v4
@@ -31,26 +32,26 @@ Este projeto é uma Azure Function desenvolvida em .NET 8 para geração de códigos
 
 ---
 
-fnValidaBoleto/README.md
-# fnValidaBoleto - Validador de Código de Barras de Boletos
+# ğŸ•µï¸ fnValidaBoleto - Validador de CÃ³digo de Barras de Boletos
 
-Este projeto é uma Azure Function desenvolvida em .NET 8 para validação de códigos de barras de boletos bancários. Ele recebe um código de barras via requisição HTTP e valida seu formato e data de vencimento.
+> ![#228B22](https://via.placeholder.com/15/228B22/000000?text=+) **Azure Function em .NET 8**
 
-## Funcionalidades
+Este projeto Ã© uma Azure Function desenvolvida em .NET 8 para validaÃ§Ã£o de cÃ³digos de barras de boletos bancÃ¡rios. Ele recebe um cÃ³digo de barras via requisiÃ§Ã£o HTTP e valida seu formato e data de vencimento.
 
-- Validação do tamanho do código de barras (44 dígitos)
-- Validação da data de vencimento embutida no código
+## âœ¨ Funcionalidades
 
-## Como usar
+- ğŸ”¢ ValidaÃ§Ã£o do tamanho do cÃ³digo de barras (44 dÃ­gitos)
+- ğŸ“… ValidaÃ§Ã£o da data de vencimento embutida no cÃ³digo
 
-1. Faça uma requisição HTTP POST para o endpoint da função `barcode-validate` com o seguinte corpo JSON: { "barcode": "0081506202510000000...0000" }
+## ğŸš€ Como usar
 
-2. O retorno será um JSON indicando se o boleto é válido e a data de vencimento extraída.
+1. FaÃ§a uma requisiÃ§Ã£o HTTP POST para o endpoint da funÃ§Ã£o `barcode-validate` com o seguinte corpo JSON: { "barcode": "0081506202510000000...0000" }
 
-## Requisitos
+2. O retorno serÃ¡ um JSON indicando se o boleto Ã© vÃ¡lido e a data de vencimento extraÃ­da.
+
+## ğŸ“¦ Requisitos
 
 - .NET 8
 - Azure Functions v4
 
 ---
-
